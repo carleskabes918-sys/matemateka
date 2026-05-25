@@ -1,0 +1,1646 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌟 SMP Bilingual Cahaya Anak Papua</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        // Fallback khusus untuk LOGO SEKOLAH jika gagal dimuat
+        window.handleLogoError = function(img) {
+            img.onerror = null;
+            img.src = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" width="120" height="120">
+                <defs>
+                    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="%2329B6F6"/>
+                        <stop offset="100%" stop-color="%230288D1"/>
+                    </linearGradient>
+                    <linearGradient id="waveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="%230288D1"/>
+                        <stop offset="100%" stop-color="%230056B3"/>
+                    </linearGradient>
+                </defs>
+                <path d="M 30,110 A 70,70 0 0,1 170,110 Z" fill="url(%23skyGrad)"/>
+                <path d="M 100,110 L 100,75 L 104,88 L 115,77 L 110,91 L 126,86 L 114,97 L 133,101 L 118,105 L 135,115 L 118,112 L 130,125" fill="%23FFFFFF"/>
+                <path d="M 100,110 L 100,75 L 96,88 L 85,77 L 90,91 L 74,86 L 86,97 L 67,101 L 82,105 L 65,115 L 82,112 L 70,125" fill="%23FFFFFF"/>
+                <circle cx="100" cy="110" r="16" fill="%23FFFFFF" />
+                <path d="M 28,102 C 60,130 90,135 125,110 C 150,92 165,95 182,106 C 185,110 178,118 170,122 C 145,134 125,120 100,138 C 75,152 45,138 28,102 Z" fill="url(%23waveGrad)"/>
+                <path d="M 28,102 C 60,130 90,135 125,110 C 135,102 145,102 155,106" fill="none" stroke="%23FFFFFF" stroke-width="2.5" opacity="0.3"/>
+                <path d="M 32,112 A 68,68 0 0,0 168,112 C 135,145 65,145 32,112 Z" fill="%2301579B" opacity="0.15"/>
+                <path id="textPathTop" d="M 25,115 A 75,75 0 0,1 175,115" fill="none"/>
+                <text font-family="'Fredoka One', sans-serif" font-size="11" font-weight="900" fill="%230288D1" letter-spacing="4">
+                    <textPath href="%23textPathTop" startOffset="50%" text-anchor="middle">SMP BILINGUAL</textPath>
+                </text>
+                <path id="textPathBottom" d="M 30,105 A 72,72 0 0,0 170,105" fill="none"/>
+                <text font-family="'Quicksand', sans-serif" font-size="10.5" font-weight="bold" fill="%230072FF" letter-spacing="1">
+                    <textPath href="%23textPathBottom" startOffset="50%" text-anchor="middle">Cahaya Anak Papua</textPath>
+                </text>
+            </svg>`;
+        };
+
+        window.handleImageError = function(img) {
+            img.onerror = null;
+            img.src = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400"><rect width="800" height="400" fill="%23FFF9C4"/><circle cx="400" cy="200" r="100" fill="%23FFE66D" opacity="0.6"/><path d="M 0 350 Q 200 250, 400 350 T 800 350 L 800 400 L 0 400 Z" fill="%23FFB100"/><text x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="24" fill="%23D97706">🌟 Ilustrasi Cerita Indah</text></svg>`;
+        };
+    </script>
+
+    <style>
+        :root {
+            --primary: #FFB100;
+            --secondary: #4ECDC4;
+            --accent: #FFE66D;
+            --bg-light: #FFFDF7;
+            --bg-dark: #0F172A;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            overflow-x: hidden;
+            transition: background-color 0.3s, color 0.3s;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        h1, h2, h3, h4, .font-kids {
+            font-family: 'Fredoka One', cursive;
+        }
+
+        .splash-screen {
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(135deg, #FFF9C4 0%, #FFB100 100%);
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.8s ease-out;
+        }
+
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .btn-bouncy {
+            transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .btn-bouncy:hover {
+            transform: translateY(-4px) scale(1.02);
+        }
+        .btn-bouncy:active {
+            transform: scale(0.95);
+        }
+
+        .card-story {
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s;
+        }
+        .card-story:hover {
+            transform: translateY(-8px) rotate(1deg);
+        }
+
+        /* --- PENYEMPURNAAN KONTRAST MODE MALAM (DARK MODE) --- */
+        .dark-mode {
+            background-color: var(--bg-dark) !important;
+            color: #F8FAFC !important;
+        }
+
+        .dark-mode header,
+        .dark-mode .bg-white,
+        .dark-mode .card-story,
+        .dark-mode #modal-add .bg-white,
+        .dark-mode #modal-chat .bg-white {
+            background-color: #1E293B !important;
+            color: #F8FAFC !important;
+            border-color: #334155 !important;
+        }
+
+        .dark-mode h1, .dark-mode h2, .dark-mode h3, .dark-mode h4,
+        .dark-mode .text-gray-700, .dark-mode .text-gray-800 {
+            color: #F1F5F9 !important;
+        }
+
+        .dark-mode .text-gray-500, .dark-mode .text-gray-600 {
+            color: #CBD5E1 !important;
+        }
+
+        .dark-mode #last-read-box, .dark-mode .bg-yellow-50, .dark-mode .bg-amber-50 {
+            background-color: #334155 !important;
+            border-color: #FFB100 !important;
+        }
+
+        .dark-mode input, .dark-mode textarea, .dark-mode select {
+            background-color: #334155 !important;
+            color: #F8FAFC !important;
+            border-color: #475569 !important;
+        }
+
+        /* Wave animation */
+        .wave-container {
+            display: flex;
+            align-items: flex-end;
+            gap: 3px;
+            height: 18px;
+        }
+        .wave-bar {
+            width: 3px;
+            height: 4px;
+            background-color: white;
+            border-radius: 1px;
+            animation: wave 0.8s ease-in-out infinite alternate;
+        }
+        .wave-bar:nth-child(2) { animation-delay: 0.15s; }
+        .wave-bar:nth-child(3) { animation-delay: 0.3s; }
+        .wave-bar:nth-child(4) { animation-delay: 0.45s; }
+
+        @keyframes wave {
+            0% { height: 4px; }
+            100% { height: 18px; }
+        }
+    </style>
+</head>
+<body class="bg-[#FFFDF7] text-gray-800">
+
+    <!-- Audio & Musik Latar Belakang (Diubah ke instrumen anak-anak ukulele & siulan yang ceria) -->
+    <audio id="clickSound" src="https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3"></audio>
+    <audio id="bgMusic" loop src="https://assets.mixkit.co/music/preview/mixkit-playtime-57.mp3"></audio>
+    <audio id="winSound" src="https://assets.mixkit.co/active_storage/sfx/1435/1435-preview.mp3"></audio>
+
+    <!-- Layar Pembuka -->
+    <div id="splash" class="splash-screen">
+        <div class="relative w-48 h-48 mb-8 flex items-center justify-center">
+            <img src="logo.png" alt="Logo SMP" class="w-full h-full object-contain floating drop-shadow-xl" onerror="window.handleLogoError(this)">
+            <i class="fas fa-star absolute top-0 right-0 text-yellow-300 text-3xl animate-pulse"></i>
+        </div>
+        <h1 class="text-4xl text-orange-800 text-center px-4 drop-shadow-sm">SMP Bilingual<br><span class="text-white text-2xl font-sans font-bold">Cahaya Anak Papua</span></h1>
+        <div class="mt-8 w-16 h-2 bg-white rounded-full overflow-hidden">
+            <div class="h-full bg-orange-500 animate-[loading_2s_ease-in-out_infinite]" style="width: 50%;"></div>
+        </div>
+    </div>
+
+    <!-- Modal Tambah Cerita -->
+    <div id="modal-add" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm">
+        <div class="bg-white rounded-[2rem] w-full max-w-3xl overflow-hidden shadow-2xl border-4 border-yellow-400">
+            <div class="bg-yellow-500 p-6 text-white flex justify-between items-center">
+                <h3 class="text-2xl font-kids flex items-center gap-2">
+                    <i class="fas fa-magic"></i> Bagikan Cahaya Ceritamu ✍️
+                </h3>
+                <button onclick="toggleModalAdd()" class="text-white hover:rotate-90 transition-all"><i class="fas fa-times text-xl"></i></button>
+            </div>
+            
+            <div class="p-6 md:p-8 space-y-5 max-h-[70vh] overflow-y-auto">
+                <!-- Tab Pilihan Tulis / AI -->
+                <div class="flex bg-slate-100 dark:bg-slate-800 p-1.5 rounded-2xl gap-2 mb-2">
+                    <button type="button" id="tab-manual-btn" onclick="window.switchWriteTab('manual')" class="flex-1 py-2.5 rounded-xl font-bold text-sm text-yellow-600 bg-white shadow transition-all flex items-center justify-center gap-2">
+                        <i class="fas fa-pencil-alt"></i> Tulis Sendiri ✍️
+                    </button>
+                    <button type="button" id="tab-ai-btn" onclick="window.switchWriteTab('ai')" class="flex-1 py-2.5 rounded-xl font-bold text-sm text-gray-500 hover:text-yellow-600 transition-all flex items-center justify-center gap-2">
+                        <i class="fas fa-sparkles"></i> Karang Bilingual AI ✨
+                    </button>
+                </div>
+
+                <!-- Bagian AI Generator -->
+                <div id="tab-ai-content" class="hidden space-y-4">
+                    <div class="bg-gradient-to-br from-yellow-50 to-amber-100 dark:from-slate-700 dark:to-slate-800 p-5 rounded-3xl border-2 border-yellow-300 shadow-inner space-y-3">
+                        <h4 class="text-lg text-yellow-800 dark:text-yellow-300 font-kids flex items-center gap-2">
+                            <i class="fas fa-sparkles"></i> ✨ Karang Kisah Bilingual Dua Bahasa (ID - EN)
+                        </h4>
+                        <p class="text-xs text-yellow-700 dark:text-slate-300">Gemini AI akan secara otomatis mengarang cerita edukatif dalam bahasa Indonesia dan versi terjemahan bahasa Inggris!</p>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div>
+                                <label class="block text-xs font-bold text-gray-700 dark:text-slate-300 mb-1">Pilih Karakter</label>
+                                <select id="ai-char" class="w-full p-2.5 rounded-xl text-sm border border-yellow-200 outline-none">
+                                    <option value="Taro, Anak Papua yang Jujur dan Berani 👦">Taro, Anak Papua Hebat 👦</option>
+                                    <option value="Candra, Burung Cendrawasih Emas yang Bijaksana 🐦">Candra Cendrawasih Emas 🐦</option>
+                                    <option value="Nunu, Burung Nuri Merah yang Ceria 🦜">Nunu Nuri Ceria 🦜</option>
+                                    <option value="Koko, Kangguru Pohon Papua yang Gemar Berbagi 🦘">Koko Kangguru Pohon 🦘</option>
+                                    <option value="Sisi, Penyu Laut Hijau yang Penyabar 🐢">Sisi Penyu Laut 🐢</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-gray-700 dark:text-slate-300 mb-1">Nilai Kebaikan</label>
+                                <select id="ai-value" class="w-full p-2.5 rounded-xl text-sm border border-yellow-200 outline-none">
+                                    <option value="menjaga keindahan alam dan lingkungan sekitar">Menjaga Lingkungan 🌳</option>
+                                    <option value="saling menolong sesama teman tanpa membeda-bedakan">Saling Menolong 🤝</option>
+                                    <option value="menjaga kejujuran dan berkata benar">Kejujuran & Integritas 🔑</option>
+                                    <option value="semangat belajar tinggi meraih cita-cita">Pantang Menyerah Belajar 📚</option>
+                                    <option value="sopan santun dan cinta damai">Sopan & Damai 🕊️</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="button" id="btn-ai-generate" onclick="window.generateStoryWithAI()" class="w-full py-3 bg-gradient-to-r from-yellow-500 to-amber-500 text-white font-bold text-sm rounded-full shadow hover:shadow-lg transition-all flex items-center justify-center gap-2 btn-bouncy">
+                            <i class="fas fa-magic"></i> Karang Kisah Bilingual ✨
+                        </button>
+                        <div id="ai-loader" class="hidden text-center py-2">
+                            <i class="fas fa-circle-notch animate-spin text-yellow-600 text-2xl"></i>
+                            <span class="text-xs text-yellow-700 dark:text-yellow-300 font-bold ml-2">Asisten Candra sedang menulis dongeng dalam dua bahasa...</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bagian Form Manual -->
+                <div id="tab-manual-content" class="space-y-4">
+                    <form id="form-add-story" class="space-y-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block font-bold mb-1 text-sm">Nama Penulis 👤</label>
+                                <input type="text" id="input-author" required class="w-full p-2.5 rounded-xl border-2 border-yellow-100 focus:border-yellow-500 outline-none text-sm" placeholder="Contoh: Maria atau Albert">
+                            </div>
+                            <div>
+                                <label class="block font-bold mb-1 text-sm">Judul Cerita (Indonesia)</label>
+                                <input type="text" id="input-title" required class="w-full p-2.5 rounded-xl border-2 border-yellow-100 focus:border-yellow-500 outline-none text-sm" placeholder="Contoh: Kiko yang Ramah">
+                            </div>
+                            <div>
+                                <label class="block font-bold mb-1 text-sm">Judul Cerita (English)</label>
+                                <input type="text" id="input-title-en" required class="w-full p-2.5 rounded-xl border-2 border-yellow-100 focus:border-yellow-500 outline-none text-sm" placeholder="Contoh: The Friendly Kiko">
+                            </div>
+                            <div>
+                                <label class="block font-bold mb-1 text-sm">Deskripsi Singkat</label>
+                                <input type="text" id="input-desc" required class="w-full p-2.5 rounded-xl border-2 border-yellow-100 focus:border-yellow-500 outline-none text-sm" placeholder="Ringkasan cerita...">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block font-bold mb-1 text-sm">Isi Cerita (Bahasa Indonesia)</label>
+                            <textarea id="input-content" required class="w-full p-2.5 h-28 rounded-xl border-2 border-yellow-100 focus:border-yellow-500 outline-none text-sm" placeholder="Isi cerita dalam bahasa Indonesia..."></textarea>
+                        </div>
+                        <div>
+                            <label class="block font-bold mb-1 text-sm">Isi Cerita (English Translation)</label>
+                            <textarea id="input-content-en" required class="w-full p-2.5 h-28 rounded-xl border-2 border-yellow-100 focus:border-yellow-500 outline-none text-sm" placeholder="Isi cerita dalam bahasa Inggris..."></textarea>
+                        </div>
+
+                        <!-- Pilihan Foto Sampul -->
+                        <div class="p-4 bg-amber-50/40 dark:bg-slate-800 rounded-2xl border border-yellow-200 space-y-4">
+                            <span class="block text-xs font-bold text-gray-500 dark:text-slate-400">Pilih Sampul Cantik:</span>
+                            <div class="flex border-b border-yellow-200 gap-1">
+                                <button type="button" id="subtab-kids-btn" onclick="window.switchSubTab('kids')" class="px-3 py-1.5 font-bold text-xs rounded-t-xl bg-yellow-400 text-white transition-all">👦 Anak-Anak (34)</button>
+                                <button type="button" id="subtab-animals-btn" onclick="window.switchSubTab('animals')" class="px-3 py-1.5 font-bold text-xs rounded-t-xl bg-slate-200 text-gray-600 hover:bg-yellow-100 transition-all">🐾 Hewan (40)</button>
+                            </div>
+
+                            <!-- Pustaka Anak-Anak -->
+                            <div id="subtab-kids-content" class="grid grid-cols-4 sm:grid-cols-8 gap-2 max-h-32 overflow-y-auto p-1 bg-white dark:bg-slate-900 rounded-xl">
+                                <!-- Loaded dynamically via JS -->
+                            </div>
+
+                            <!-- Pustaka Hewan -->
+                            <div id="subtab-animals-content" class="hidden grid grid-cols-4 sm:grid-cols-8 gap-2 max-h-32 overflow-y-auto p-1 bg-white dark:bg-slate-900 rounded-xl">
+                                <!-- Loaded dynamically via JS -->
+                            </div>
+
+                            <input type="url" id="input-custom-img-url" class="w-full p-2.5 rounded-xl border border-yellow-100 outline-none text-xs dark:bg-slate-700" placeholder="Punya foto sendiri? Tempel link foto internet di sini..." oninput="window.updateCustomImagePreview(this.value)">
+                            <div class="flex items-center gap-3">
+                                <span class="text-xs text-gray-500">Pratinjau Sampul:</span>
+                                <img id="form-image-preview" src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800" class="w-16 h-12 rounded-lg object-cover border-2 border-yellow-400">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="w-full py-3 bg-yellow-500 text-white rounded-full font-bold text-lg hover:bg-yellow-600 transition-all shadow-lg btn-bouncy">
+                            Terbitkan Cerita Baru ✨
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Tanya Sahabat Terang (Gemini Chatbot) -->
+    <div id="modal-chat" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+        <div class="bg-white rounded-[2.5rem] w-full max-w-lg overflow-hidden shadow-2xl border-4 border-yellow-400 flex flex-col h-[520px] transform scale-95 transition-all">
+            <div class="bg-gradient-to-r from-yellow-500 to-amber-600 p-5 text-white flex justify-between items-center">
+                <div class="flex items-center gap-3">
+                    <span class="text-3xl">🦜</span>
+                    <div>
+                        <h3 class="text-xl font-kids">✨ Sahabat Terang</h3>
+                        <p class="text-xs opacity-95">Tanyakan kosa kata atau nilai moral cerita ini!</p>
+                    </div>
+                </div>
+                <button onclick="window.toggleChatModal()" class="text-white bg-black/20 w-8 h-8 rounded-full flex items-center justify-center hover:scale-110 transition-transform">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div id="chat-messages" class="flex-grow p-6 overflow-y-auto space-y-4 bg-slate-50 dark:bg-slate-900 text-sm"></div>
+            <div id="chat-loading" class="hidden px-6 py-2 bg-slate-50 dark:bg-slate-900 text-xs text-yellow-600 font-bold flex items-center gap-2">
+                <i class="fas fa-circle-notch animate-spin"></i> Sahabat Terang sedang mengetik...
+            </div>
+
+            <div class="p-4 bg-white dark:bg-slate-800 border-t border-slate-100 dark:border-slate-700 flex gap-2">
+                <input type="text" id="chat-input" placeholder="Tanyakan kosa kata atau moral cerita..." class="flex-grow p-3 rounded-2xl border-2 border-yellow-100 focus:border-yellow-400 outline-none text-sm">
+                <button onclick="window.sendMessageToAI()" class="px-5 py-3 bg-gradient-to-r from-yellow-500 to-amber-500 text-white rounded-2xl font-bold hover:shadow-lg transition-all flex items-center justify-center btn-bouncy">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Sukses -->
+    <div id="modal-success" class="fixed inset-0 z-[110] hidden flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm">
+        <div class="bg-white rounded-[2rem] p-8 text-center max-w-sm w-full border-4 border-green-400 shadow-2xl">
+            <div class="text-6xl mb-4 text-green-500">🎉</div>
+            <h3 class="text-2xl font-kids text-gray-800 mb-2">Hore, Hebat!</h3>
+            <p id="success-message" class="text-gray-500 mb-6">Aksi kamu berhasil dilakukan!</p>
+            <button onclick="window.closeSuccessModal()" class="px-8 py-3 bg-green-500 text-white rounded-full font-bold shadow-md hover:bg-green-600 transition-all btn-bouncy">OK!</button>
+        </div>
+    </div>
+
+    <!-- Kontainer Utama Aplikasi -->
+    <div id="app" class="hidden min-h-screen flex flex-col">
+        
+        <!-- Header -->
+        <header class="p-4 md:p-6 flex justify-between items-center bg-white shadow-md sticky top-0 z-50">
+            <div class="flex items-center gap-3 cursor-pointer" onclick="showView('home')">
+                <img src="logo.png" alt="Logo SMP" class="w-12 h-12 object-contain" onerror="window.handleLogoError(this)">
+                <div>
+                    <h1 class="text-xl text-yellow-600 leading-none">SMP Bilingual</h1>
+                    <span class="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Cahaya Anak Papua</span>
+                </div>
+            </div>
+            <div class="flex items-center gap-2 md:gap-4">
+                <button id="btnMusicToggle" onclick="window.toggleMusic()" class="p-2.5 rounded-full bg-yellow-100 hover:bg-yellow-200 text-yellow-600 transition-all" title="Musik Latar">
+                    <i id="musicIcon" class="fas fa-music"></i>
+                </button>
+                <button onclick="toggleModalAdd()" class="hidden md:flex items-center gap-2 px-4 py-2 bg-yellow-500 text-white rounded-full font-bold hover:bg-yellow-600 transition-all">
+                    <i class="fas fa-plus"></i> Tambah Cerita
+                </button>
+                <button onclick="toggleDarkMode()" class="p-2.5 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors">
+                    <i id="themeIcon" class="fas fa-moon text-indigo-600"></i>
+                </button>
+                <div class="relative">
+                    <input type="text" id="searchInput" placeholder="Cari..." class="pl-8 pr-3 py-1.5 rounded-full border-2 border-yellow-100 focus:border-yellow-300 outline-none w-28 md:w-48 transition-all text-xs">
+                    <i class="fas fa-search absolute left-3 top-2.5 text-yellow-300 text-xs"></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- Views Container -->
+        <main class="flex-grow p-4 md:p-8 max-w-6xl mx-auto w-full">
+            
+            <!-- HOME VIEW (SUPER DASHBOARD) -->
+            <section id="view-home" class="view space-y-8 py-4">
+                <!-- Banner Utama Sekolah -->
+                <div class="p-6 md:p-10 bg-gradient-to-r from-yellow-400 via-amber-500 to-orange-500 rounded-[2.5rem] text-white shadow-lg relative overflow-hidden flex flex-col md:flex-row items-center gap-6">
+                    <img src="logo.png" alt="Logo" class="w-24 h-24 md:w-32 md:h-32 object-contain floating drop-shadow-lg" onerror="window.handleLogoError(this)">
+                    <div class="text-center md:text-left space-y-2 z-10">
+                        <h2 class="text-3xl md:text-5xl leading-tight text-white font-kids">Mari Membaca & Bermain!</h2>
+                        <p class="text-white/95 max-w-lg text-sm md:text-base font-semibold">Tumbuh cerdas bersama SMP Bilingual Cahaya Anak Papua. Belajar Bahasa Indonesia, Bahasa Inggris, dan kosa kata daerah Papua!</p>
+                    </div>
+                    <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-white/10 rounded-full blur-xl"></div>
+                </div>
+
+                <!-- Banner Informasi Musik Aktif -->
+                <div id="musicNotification" class="hidden p-4 bg-yellow-100 border-2 border-yellow-300 rounded-2xl flex items-center justify-between max-w-lg mx-auto animate-pulse">
+                    <div class="flex items-center gap-3">
+                        <span class="text-2xl">🎵</span>
+                        <p class="text-xs font-semibold text-yellow-800">Yuk aktifkan lagu ceria untuk menemani belajarmu hari ini!</p>
+                    </div>
+                    <button onclick="window.activateMusicFromBanner()" class="px-4 py-1.5 bg-yellow-500 hover:bg-yellow-600 text-white rounded-xl text-xs font-bold shadow">Mainkan</button>
+                </div>
+
+                <!-- Bagian Dashboard Siswa (Lencana & Statistik) -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Statistik Kemajuan -->
+                    <div class="bg-white p-6 rounded-3xl border-2 border-yellow-100 shadow-sm flex flex-col justify-between">
+                        <h3 class="text-lg text-yellow-600 mb-4 flex items-center gap-2">
+                            <i class="fas fa-chart-line"></i> Buku & Prestasi Kamu
+                        </h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="text-center p-3 bg-yellow-50 dark:bg-slate-800 rounded-2xl">
+                                <span id="read-count" class="block text-3xl font-bold text-yellow-600">0</span>
+                                <span class="text-xs text-gray-500 font-bold uppercase">Dibaca</span>
+                            </div>
+                            <div class="text-center p-3 bg-teal-50 dark:bg-slate-800 rounded-2xl">
+                                <span id="quiz-score" class="block text-3xl font-bold text-teal-600">0</span>
+                                <span class="text-xs text-gray-500 font-bold uppercase">Skor Kuis</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lencana Koleksi -->
+                    <div class="bg-white p-6 rounded-3xl border-2 border-yellow-100 shadow-sm md:col-span-2">
+                        <h3 class="text-lg text-yellow-600 mb-3 flex items-center gap-2">
+                            <i class="fas fa-award"></i> Lencana Penghargaan Cerdas
+                        </h3>
+                        <div id="badge-container" class="flex flex-wrap gap-4 items-center justify-start py-2">
+                            <!-- Badges will be generated dynamically -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Utama -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 pt-4">
+                    <button onclick="showView('list')" class="btn-bouncy flex flex-col items-center p-6 bg-yellow-400 rounded-3xl text-white shadow-lg hover:bg-yellow-500">
+                        <i class="fas fa-book-open text-4xl mb-3 animate-pulse"></i>
+                        <span class="text-sm font-bold uppercase tracking-wider">Membaca Cerita</span>
+                    </button>
+                    <button onclick="showView('quiz')" class="btn-bouncy flex flex-col items-center p-6 bg-emerald-400 rounded-3xl text-white shadow-lg hover:bg-emerald-500">
+                        <i class="fas fa-gamepad text-4xl mb-3"></i>
+                        <span class="text-sm font-bold uppercase tracking-wider">Zona Game Kuis</span>
+                    </button>
+                    <button onclick="toggleModalAdd()" class="btn-bouncy flex flex-col items-center p-6 bg-orange-400 rounded-3xl text-white shadow-lg hover:bg-orange-500">
+                        <i class="fas fa-lightbulb text-4xl mb-3"></i>
+                        <span class="text-sm font-bold uppercase tracking-wider">Tulis Cerita</span>
+                    </button>
+                    <button onclick="showView('about')" class="btn-bouncy flex flex-col items-center p-6 bg-indigo-400 rounded-3xl text-white shadow-lg hover:bg-indigo-500">
+                        <i class="fas fa-info-circle text-4xl mb-3"></i>
+                        <span class="text-sm font-bold uppercase tracking-wider">Tentang Kami</span>
+                    </button>
+                </div>
+
+                <!-- Last Read Quick Link -->
+                <div id="last-read-box" class="hidden p-5 bg-white border-4 border-dashed border-yellow-300 rounded-3xl flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <span class="text-3xl">🔖</span>
+                        <div>
+                            <h4 class="font-bold text-yellow-800 text-sm">Lanjutkan petualangan belajarmu:</h4>
+                            <p id="last-read-title" class="text-gray-500 text-xs font-semibold"></p>
+                        </div>
+                    </div>
+                    <button id="btn-continue" class="px-5 py-1.5 bg-yellow-500 text-white font-bold rounded-full hover:shadow transition-all text-xs">Lanjut</button>
+                </div>
+            </section>
+
+            <!-- LIST VIEW (PILIH CERITA) -->
+            <section id="view-list" class="view hidden space-y-6">
+                <div class="flex items-center justify-between border-b pb-4">
+                    <h2 class="text-2xl text-yellow-600">Pilih Cahaya Ceritamu 📚</h2>
+                    <div class="flex gap-2">
+                        <button onclick="renderStoryGrid(stories)" class="px-4 py-1.5 rounded-full text-xs font-bold bg-yellow-500 text-white shadow">Semua</button>
+                        <button onclick="showFavorites()" class="px-4 py-1.5 rounded-full text-xs font-bold bg-teal-500 text-white shadow flex items-center gap-1"><i class="fas fa-star text-[10px]"></i> Favorit</button>
+                    </div>
+                </div>
+                <div id="story-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+            </section>
+
+            <!-- READING VIEW (BILINGUAL STORY PLAYER) -->
+            <section id="view-read" class="view hidden">
+                <div class="bg-white rounded-[2.5rem] shadow-xl overflow-hidden max-w-4xl mx-auto border-4 border-white">
+                    <div class="relative h-60 md:h-80 bg-gray-200">
+                        <img id="reader-image" src="" alt="Ilustrasi" class="w-full h-full object-cover" onerror="window.handleImageError(this)">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <h2 id="reader-title" class="absolute bottom-6 left-6 right-6 text-2xl md:text-4xl text-white font-kids drop-shadow-md"></h2>
+                    </div>
+                    
+                    <div class="p-6 md:p-8 space-y-6">
+                        <!-- Toolbar Pembaca Bilingual -->
+                        <div class="flex flex-wrap justify-between items-center bg-slate-50 dark:bg-slate-800 p-4 rounded-2xl gap-4">
+                            <div class="flex gap-2">
+                                <button onclick="toggleSpeech()" id="btn-tts" class="flex items-center gap-2 px-5 py-2 bg-yellow-500 text-white rounded-full font-bold hover:bg-yellow-600 text-xs shadow">
+                                    <i class="fas fa-volume-up"></i> <span id="tts-label">Dengarkan</span>
+                                </button>
+                                <button onclick="toggleFavorite()" id="btn-fav" class="w-9 h-9 flex items-center justify-center rounded-full border-2 border-yellow-500 text-yellow-500">
+                                    <i class="far fa-star"></i>
+                                </button>
+                                <button onclick="window.toggleChatModal()" class="flex items-center gap-2 px-5 py-2 bg-gradient-to-r from-teal-400 to-indigo-500 text-white rounded-full font-bold text-xs shadow animate-pulse">
+                                    <i class="fas fa-comment-dots"></i> <span>Tanya Sahabat Terang ✨</span>
+                                </button>
+                            </div>
+
+                            <!-- Bilingual Mode Switcher -->
+                            <div class="flex items-center gap-2 bg-white dark:bg-slate-700 p-1.5 rounded-full shadow border text-xs">
+                                <button onclick="setBilingualView('id')" id="lang-id-btn" class="px-3 py-1 rounded-full font-bold bg-yellow-500 text-white transition-all">🇮🇩 ID</button>
+                                <button onclick="setBilingualView('en')" id="lang-en-btn" class="px-3 py-1 rounded-full font-bold text-gray-500 dark:text-slate-300 transition-all">🇬🇧 EN</button>
+                                <button onclick="setBilingualView('dual')" id="lang-dual-btn" class="px-3 py-1 rounded-full font-bold text-gray-500 dark:text-slate-300 transition-all">🌗 DUAL</button>
+                            </div>
+
+                            <div class="flex items-center gap-3 text-xs text-gray-500">
+                                <span>Penulis: <strong id="reader-author" class="text-yellow-600"></strong></span>
+                                <select id="tts-speed" class="border rounded p-1 dark:bg-slate-700 text-xs">
+                                    <option value="0.75">Lambat</option>
+                                    <option value="1.0" selected>Normal</option>
+                                    <option value="1.25">Cepat</option>
+                                </select>
+                                <input type="range" min="16" max="36" value="20" oninput="changeFontSize(this.value)" class="accent-yellow-500 w-20">
+                            </div>
+                        </div>
+
+                        <!-- Isi Cerita Dua Bahasa -->
+                        <div class="p-6 md:p-8 bg-amber-50/10 dark:bg-slate-900/50 rounded-3xl border border-yellow-100/40">
+                            <div id="reader-content" class="story-content text-justify leading-relaxed tracking-wide text-gray-800 dark:text-slate-200 grid grid-cols-1 gap-6">
+                                <!-- Injected dynamically based on selected Bilingual Mode -->
+                            </div>
+                        </div>
+
+                        <!-- Tombol Navigasi -->
+                        <div class="flex justify-between items-center border-t pt-6">
+                            <button onclick="showView('list')" class="flex items-center gap-2 text-gray-500 font-bold hover:text-yellow-600 transition-colors text-sm">
+                                <i class="fas fa-chevron-left"></i> Kembali ke Daftar
+                            </button>
+                            <button id="btn-next" class="flex items-center gap-2 bg-accent px-6 py-2.5 rounded-full font-bold shadow text-sm hover:scale-105 transition-transform">
+                                Cerita Berikutnya <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- GAME ZONE VIEW (KUIS KOSA KATA) -->
+            <section id="view-quiz" class="view hidden space-y-6">
+                <div class="max-w-xl mx-auto bg-white p-6 md:p-8 rounded-[2.5rem] border-4 border-emerald-400 shadow-xl space-y-6">
+                    <div class="text-center space-y-2">
+                        <span class="text-5xl">🎮</span>
+                        <h2 class="text-2xl text-emerald-600 font-kids">Kuis Kosa Kata Dua Bahasa!</h2>
+                        <p class="text-xs text-gray-500">Ayo tebak arti kata bahasa Papua & Inggris untuk mengumpulkan koin pintar.</p>
+                    </div>
+
+                    <!-- Area Game -->
+                    <div id="quiz-container" class="space-y-6">
+                        <!-- Scoreboard -->
+                        <div class="flex justify-between items-center bg-slate-50 dark:bg-slate-800 p-3 rounded-2xl text-xs font-bold border border-emerald-100">
+                            <span class="text-emerald-600"><i class="fas fa-trophy mr-1"></i> Skor Kuis: <span id="game-score">0</span></span>
+                            <span class="text-yellow-600"><i class="fas fa-coin mr-1"></i> Level: <span id="game-level">1</span></span>
+                        </div>
+
+                        <!-- Pertanyaan -->
+                        <div class="p-6 bg-emerald-50 dark:bg-slate-700 rounded-3xl border-2 border-emerald-200 text-center space-y-2">
+                            <span class="text-xs uppercase tracking-wider text-emerald-700 font-bold dark:text-emerald-300">Pertanyaan Kata</span>
+                            <h3 id="quiz-question-word" class="text-3xl text-emerald-900 dark:text-emerald-100 font-bold">Amolongo</h3>
+                            <p id="quiz-question-hint" class="text-xs text-emerald-600 dark:text-emerald-300 font-semibold">(Bahasa Amungme Papua)</p>
+                        </div>
+
+                        <!-- Pilihan Jawaban -->
+                        <div id="quiz-options" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <!-- Injected by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Tombol Reset / Kembali -->
+                    <div class="flex justify-center pt-4 border-t border-slate-100">
+                        <button onclick="showView('home')" class="text-sm font-bold text-gray-500 hover:text-emerald-600 transition-colors">
+                            <i class="fas fa-arrow-left mr-2"></i>Kembali Ke Beranda
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ABOUT VIEW -->
+            <section id="view-about" class="view hidden text-center space-y-6 py-6">
+                <div class="max-w-2xl mx-auto bg-white p-8 md:p-10 rounded-[2.5rem] shadow-xl border-4 border-dashed border-indigo-200 space-y-6">
+                    <img src="logo.png" alt="Logo" class="w-24 h-24 mx-auto object-contain floating" onerror="window.handleLogoError(this)">
+                    <h2 class="text-2xl md:text-3xl text-indigo-500">Tentang SMP Bilingual</h2>
+                    <p class="text-gray-600 text-sm md:text-base leading-relaxed">
+                        Aplikasi <strong>SMP Bilingual</strong> dipersembahkan oleh <strong>SMP Bilingual Cahaya Anak Papua</strong>. Media edukasi modern interaktif ini dirancang agar setiap anak Papua dan Indonesia tumbuh dengan kecerdasan multi-bahasa, menyerap nilai budi pekerti yang luhur, dan memancarkan potensi terbaik mereka untuk dunia.
+                    </p>
+                    <div class="pt-4 flex justify-center gap-3">
+                        <i class="fas fa-sun text-2xl text-yellow-500 animate-spin" style="animation-duration: 10s;"></i>
+                        <span class="font-bold text-gray-500 text-xs uppercase tracking-widest">Menerangi Dunia dengan Ilmu & Budi Pekerti</span>
+                    </div>
+                    <button onclick="showView('home')" class="px-8 py-3 bg-indigo-500 text-white rounded-full font-bold shadow hover:bg-indigo-600 transition-all btn-bouncy text-sm">Ayo Mulai Belajar!</button>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="p-6 text-center text-gray-400 text-xs mt-auto">
+            &copy; 2026 SMP Bilingual. SMP Bilingual Cahaya Anak Papua. Berbagi Cahaya Melalui Kata.
+        </footer>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, collection, addDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // --- Data Cerita Default ---
+        let baseStories = [
+            {
+                id: 1,
+                title: "Si Kancil dan Buaya",
+                titleEn: "The Mouse Deer and the Crocodiles",
+                author: "SMP Bilingual",
+                image: "https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&q=80&w=800",
+                desc: "Kisah kecerdikan Si Kancil menyeberangi sungai penuh buaya.",
+                content: `Di pinggir sebuah hutan, hiduplah seekor Kancil yang sangat cerdik. Suatu hari, Kancil ingin menyeberangi sungai untuk memakan buah-buahan segar di seberang. Namun, sungai itu dihuni banyak sekali buaya yang lapar. Kancil tidak takut, ia punya ide cemerlang.\n\nIa memanggil para buaya dan berkata bahwa Raja Hutan ingin menghitung jumlah buaya di sungai tersebut. Kancil menyuruh para buaya berbaris dari tepi ke tepi. Satu per satu, Kancil melompat di atas punggung buaya sambil berhitung. "Satu... dua... tiga..." hingga ia sampai di seberang sungai dengan selamat. Para buaya baru sadar mereka telah dikelabui, tapi Kancil sudah lari sambil tertawa girang.`,
+                contentEn: `On the edge of a forest, there lived a very clever Mouse Deer (Kancil). One day, Kancil wanted to cross a river to eat fresh fruits on the other side. However, the river was inhabited by many hungry crocodiles. Kancil was not afraid; he had a brilliant idea.\n\nHe called the crocodiles and said that the King of the Forest wanted to count all the crocodiles in the river. Kancil asked them to line up from one bank to the other. One by one, Kancil jumped on their backs while counting, "One... two... three..." until he reached the other side safely. The crocodiles realized they were tricked, but Kancil had already run away, laughing happily.`
+            },
+            {
+                id: 2,
+                title: "Kelinci yang Pintar",
+                titleEn: "The Clever Rabbit",
+                author: "SMP Bilingual",
+                image: "https://images.unsplash.com/photo-1585110396054-c8112ca9625f?auto=format&fit=crop&q=80&w=800",
+                desc: "Bagaimana Kelinci menggunakan otaknya untuk menolong teman-teman.",
+                content: `Ada seekor kelinci putih bernama Putih. Putih bukan hanya cepat berlari, tapi juga sangat suka membaca buku dan belajar. Suatu musim kemarau panjang, sumber air di hutan mulai kering dan habis. Teman-teman hewan mulai panik ketakutan.\n\nPutih tidak diam saja. Ia mencari peta tua di lemari rumah kakeknya. Dengan peta itu, ia memimpin seluruh rombongan hewan mencari mata air tersembunyi di balik gua kristal. Berkat keberanian dan kepintaran Putih, seluruh penghuni hutan tidak lagi kehausan. Sejak saat itu, Putih selalu menjadi tempat bertanya bagi semua hewan lainnya.`,
+                contentEn: `There was a white rabbit named Putih. Putih was not only fast at running, but he also loved reading books and learning. During a long dry season, the water sources in the forest started to dry up. The animal friends began to panic with fear.\n\nPutih did not stay quiet. He searched for an old map in his grandfather's cupboard. Guided by the map, he led all the animals to find a hidden spring behind a crystal cave. Thanks to Putih's bravery and cleverness, all the forest inhabitants were no longer thirsty. From that day on, Putih became the wise go-to helper for all other animals.`
+            },
+            {
+                id: 3,
+                title: "Anak Rajin: Doni",
+                titleEn: "The Diligent Boy: Doni",
+                author: "SMP Bilingual",
+                image: "https://images.unsplash.com/photo-1503919919749-64674a9a9907?auto=format&fit=crop&q=80&w=800",
+                desc: "Doni selalu bangun pagi dan membantu orang tua.",
+                content: `Doni adalah anak yang sangat rajin. Setiap pagi sebelum matahari terbit, Doni sudah bangun dengan segar. Ia merapikan tempat tidurnya sendiri tanpa perlu disuruh oleh ibu.\n\nSetelah itu, ia membantu ayah menyiram tanaman bunga dan sayuran di kebun belakang. Doni percaya bahwa keberhasilan dimulai dari kedisiplinan kecil setiap hari. Di sekolah, Doni juga selalu menjadi juara kelas karena ia sangat rajin membaca buku cerita seperti kamu! Kedua orang tuanya sangat bangga memiliki anak serajin Doni.`,
+                contentEn: `Doni is a very diligent boy. Every morning before the sun rises, Doni wakes up feeling fresh. He tidies his own bed without being asked by his mother.\n\nAfter that, he helps his father water the flowers and vegetables in the backyard garden. Doni believes that success starts from small discipline every day. At school, Doni is also always at the top of his class because he is very diligent in reading storybooks just like you! His parents are extremely proud of him.`
+            }
+        ];
+
+        let stories = [...baseStories];
+        let cloudStories = [];
+
+        // --- Data Kuis ---
+        const quizWords = [
+            { word: "Amolongo", hint: "Bahasa Amungme Papua", options: ["Halo / Salam Sejahtera", "Hutan Rimba", "Burung Cantik", "Mari Makan"], answer: 0 },
+            { word: "Noken", hint: "Tas Tradisional Papua", options: ["Pakaian Tradisional", "Tas rajut kulit kayu / serat", "Rumah adat", "Tarian upacara"], answer: 1 },
+            { word: "Cendrawasih", hint: "Burung Surga khas Papua", options: ["Crocodile", "Bird of Paradise", "Butterfly", "Tree Kangaroo"], answer: 1 },
+            { word: "Book", hint: "Kosa Kata Inggris", options: ["Buku", "Pulpen", "Sekolah", "Peta"], answer: 0 },
+            { word: "Water", hint: "Kosa Kata Inggris", options: ["Matahari", "Batu", "Air", "Sungai"], answer: 2 },
+            { word: "Iraji", hint: "Suku Dani Papua", options: ["Terima Kasih", "Rumah Honai", "Selamat Pagi", "Teman Hebat"], answer: 0 },
+            { word: "Tree Kangaroo", hint: "Kangguru Pohon", options: ["Kangguru Pohon", "Lumba-lumba", "Penyu Hijau", "Burung Nuri"], answer: 0 },
+            { word: "Honai", hint: "Rumah adat Papua berbentuk kubah", options: ["Kano kayu", "Rumah adat khas Papua", "Noken anyaman", "Senjata tradisional"], answer: 1 }
+        ];
+
+        // --- App State ---
+        let currentStory = null;
+        let isDarkMode = false;
+        let isSpeaking = false;
+        let bilingualMode = 'id'; // 'id', 'en', 'dual'
+        let favorites = JSON.parse(localStorage.getItem('story_favs')) || [];
+        let readHistory = JSON.parse(localStorage.getItem('read_history')) || [];
+        let currentQuizIndex = 0;
+        let scoreQuiz = parseInt(localStorage.getItem('quiz_score')) || 0;
+        const synth = window.speechSynthesis;
+        let utterThis = null;
+
+        // --- Generator Efek Suara Cadangan (Web Audio API Fallback) ---
+        function playFallbackSound(type) {
+            try {
+                const ctx = new (window.AudioContext || window.webkitAudioContext)();
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+                
+                if (type === 'click') {
+                    osc.frequency.setValueAtTime(440, ctx.currentTime);
+                    osc.frequency.exponentialRampToValueAtTime(880, ctx.currentTime + 0.1);
+                    gain.gain.setValueAtTime(0.1, ctx.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.1);
+                    osc.start();
+                    osc.stop(ctx.currentTime + 0.1);
+                } else if (type === 'win') {
+                    const now = ctx.currentTime;
+                    osc.frequency.setValueAtTime(523.25, now); // C5
+                    osc.frequency.setValueAtTime(659.25, now + 0.1); // E5
+                    osc.frequency.setValueAtTime(783.99, now + 0.2); // G5
+                    osc.frequency.setValueAtTime(1046.50, now + 0.3); // C6
+                    gain.gain.setValueAtTime(0.15, now);
+                    gain.gain.exponentialRampToValueAtTime(0.01, now + 0.5);
+                    osc.start();
+                    osc.stop(now + 0.5);
+                }
+            } catch(e) {
+                console.log("Web Audio tidak didukung atau diblokir");
+            }
+        }
+
+        // --- Konfigurasi Firebase / Database Cloud ---
+        let db, auth;
+        let useFirebase = false;
+        let currentUser = null;
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'smp-bilingual';
+
+        if (typeof __firebase_config !== 'undefined' && __firebase_config) {
+            try {
+                const firebaseConfig = typeof __firebase_config === 'string' ? JSON.parse(__firebase_config) : __firebase_config;
+                const app = initializeApp(firebaseConfig);
+                auth = getAuth(app);
+                db = getFirestore(app);
+                useFirebase = true;
+            } catch (e) {
+                console.error("Firebase Gagal: ", e);
+            }
+        }
+
+        // --- Autentikasi Cloud ---
+        const initAuth = async () => {
+            if (!useFirebase) return;
+            try {
+                if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+                    await signInWithCustomToken(auth, __initial_auth_token);
+                } else {
+                    await signInAnonymously(auth);
+                }
+            } catch (error) {
+                console.error("Autentikasi database gagal:", error);
+            }
+        };
+
+        // --- Sinkronisasi Cerita ---
+        const mergeAndRenderStories = () => {
+            const localCustom = JSON.parse(localStorage.getItem('custom_stories')) || [];
+            const allStoriesMap = new Map();
+
+            baseStories.forEach(s => allStoriesMap.set(String(s.id), s));
+            localCustom.forEach(s => allStoriesMap.set(String(s.id), s));
+            cloudStories.forEach(s => allStoriesMap.set(String(s.id), s));
+
+            stories = Array.from(allStoriesMap.values());
+            renderStoryGrid(stories);
+            updateStats();
+        };
+
+        const setupFirestoreListener = () => {
+            if (!useFirebase || !currentUser) return;
+            const storiesCollection = collection(db, 'artifacts', appId, 'public', 'data', 'stories');
+            onSnapshot(storiesCollection, (snapshot) => {
+                cloudStories = [];
+                snapshot.forEach((doc) => {
+                    const data = doc.data();
+                    cloudStories.push({ id: data.id || doc.id, ...data });
+                });
+                mergeAndRenderStories();
+                checkLastRead();
+            }, (error) => {
+                console.error("Gagal sinkron cloud:", error);
+                mergeAndRenderStories();
+            });
+        };
+
+        // --- Musik Latar Belakang ---
+        let isMusicPlaying = false;
+        const bgMusic = document.getElementById('bgMusic');
+
+        const tryPlayMusic = () => {
+            bgMusic.volume = 0.25; 
+            bgMusic.play()
+                .then(() => {
+                    isMusicPlaying = true;
+                    updateMusicIcon();
+                    document.getElementById('musicNotification').classList.add('hidden');
+                })
+                .catch(() => {
+                    isMusicPlaying = false;
+                    updateMusicIcon();
+                    document.getElementById('musicNotification').classList.remove('hidden');
+                });
+        };
+
+        const initMusicOnFirstInteraction = () => {
+            if (!isMusicPlaying) tryPlayMusic();
+            document.removeEventListener('click', initMusicOnFirstInteraction);
+            document.removeEventListener('touchstart', initMusicOnFirstInteraction);
+        };
+
+        window.activateMusicFromBanner = () => {
+            tryPlayMusic();
+            document.getElementById('musicNotification').classList.add('hidden');
+        };
+
+        window.toggleMusic = () => {
+            playClick();
+            if (isMusicPlaying) {
+                bgMusic.pause();
+                isMusicPlaying = false;
+            } else {
+                bgMusic.volume = 0.25;
+                bgMusic.play().catch(() => {});
+                isMusicPlaying = true;
+            }
+            updateMusicIcon();
+        };
+
+        const updateMusicIcon = () => {
+            const icon = document.getElementById('musicIcon');
+            const btn = document.getElementById('btnMusicToggle');
+            if (isMusicPlaying) {
+                icon.className = 'fas fa-volume-up';
+                btn.classList.add('animate-pulse');
+            } else {
+                icon.className = 'fas fa-volume-mute';
+                btn.classList.remove('animate-pulse');
+            }
+        };
+
+        // --- Inisialisasi Aplikasi ---
+        window.addEventListener('load', async () => {
+            if (useFirebase) {
+                await initAuth();
+                onAuthStateChanged(auth, (user) => {
+                    currentUser = user;
+                    if (user) {
+                        setupFirestoreListener();
+                    } else {
+                        mergeAndRenderStories();
+                    }
+                });
+            } else {
+                mergeAndRenderStories();
+            }
+
+            document.addEventListener('click', initMusicOnFirstInteraction);
+            document.addEventListener('touchstart', initMusicOnFirstInteraction);
+
+            setTimeout(() => {
+                const splash = document.getElementById('splash');
+                if (splash) {
+                    splash.style.opacity = '0';
+                    setTimeout(() => {
+                        splash.remove();
+                        document.getElementById('app').classList.remove('hidden');
+                        initApp();
+                        tryPlayMusic();
+                    }, 800);
+                }
+            }, 1800);
+        });
+
+        function initApp() {
+            // Load foto sampul kustom dinamis
+            loadPhotoLibrary();
+
+            mergeAndRenderStories();
+            checkLastRead();
+            initQuizGame();
+            updateStats();
+            
+            document.getElementById('searchInput').addEventListener('input', (e) => {
+                const term = e.target.value.toLowerCase();
+                const filtered = stories.filter(s => s.title.toLowerCase().includes(term) || (s.titleEn && s.titleEn.toLowerCase().includes(term)));
+                renderStoryGrid(filtered);
+            });
+
+            document.getElementById('form-add-story').addEventListener('submit', (e) => {
+                e.preventDefault();
+                addNewStory();
+            });
+        }
+
+        // --- SISTEM GAME KUIS JAWAB KOSA KATA ---
+        function initQuizGame() {
+            if (currentQuizIndex >= quizWords.length) {
+                currentQuizIndex = 0;
+            }
+            const currentQ = quizWords[currentQuizIndex];
+            document.getElementById('quiz-question-word').innerText = currentQ.word;
+            document.getElementById('quiz-question-hint').innerText = `(${currentQ.hint})`;
+            document.getElementById('game-score').innerText = scoreQuiz;
+            document.getElementById('game-level').innerText = Math.floor(scoreQuiz / 30) + 1;
+
+            const optionsContainer = document.getElementById('quiz-options');
+            optionsContainer.innerHTML = '';
+
+            currentQ.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = "w-full p-4 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 font-bold border-2 border-slate-100 dark:border-slate-700 hover:border-emerald-400 dark:hover:border-emerald-400 rounded-2xl transition-all shadow-sm text-left text-sm flex items-center justify-between";
+                btn.innerHTML = `<span>${opt}</span> <i class="fas fa-question-circle text-slate-300"></i>`;
+                btn.onclick = () => checkQuizAnswer(idx, btn);
+                optionsContainer.appendChild(btn);
+            });
+        }
+
+        function checkQuizAnswer(selectedIndex, buttonElement) {
+            const currentQ = quizWords[currentQuizIndex];
+            const optionsContainer = document.getElementById('quiz-options');
+            const allButtons = optionsContainer.querySelectorAll('button');
+
+            // Disable all buttons
+            allButtons.forEach(btn => btn.disabled = true);
+
+            if (selectedIndex === currentQ.answer) {
+                scoreQuiz += 10;
+                localStorage.setItem('quiz_score', scoreQuiz);
+                
+                // Coba putar berkas, bila gagal mainkan cadangan sintetis
+                document.getElementById('winSound').play().catch(() => {
+                    playFallbackSound('win');
+                });
+                
+                buttonElement.className = buttonElement.className.replace("border-slate-100", "border-green-500 bg-green-50 dark:bg-green-900/30 text-green-700");
+                buttonElement.querySelector('i').className = "fas fa-check-circle text-green-500";
+            } else {
+                buttonElement.className = buttonElement.className.replace("border-slate-100", "border-red-500 bg-red-50 dark:bg-red-900/30 text-red-700");
+                buttonElement.querySelector('i').className = "fas fa-times-circle text-red-500";
+                
+                // Highlight correct
+                const correctBtn = allButtons[currentQ.answer];
+                correctBtn.className = correctBtn.className.replace("border-slate-100", "border-green-500 text-green-700");
+            }
+
+            setTimeout(() => {
+                currentQuizIndex++;
+                initQuizGame();
+                updateStats();
+            }, 1500);
+        }
+
+        // --- STATISTIK & LENCANA PENGHARGAAN SISWA ---
+        const updateStats = () => {
+            const readHistoryCount = readHistory.length;
+            document.getElementById('read-count').innerText = readHistoryCount;
+            document.getElementById('game-score').innerText = scoreQuiz;
+            document.getElementById('quiz-score').innerText = scoreQuiz;
+
+            const badgeContainer = document.getElementById('badge-container');
+            if (!badgeContainer) return;
+            badgeContainer.innerHTML = '';
+
+            // Definisikan daftar lencana cerdas
+            const awards = [
+                { id: 'bintang_papua', label: 'Bintang Papua', icon: '🌟', active: readHistoryCount >= 1, desc: 'Telah membaca cerita pertama!' },
+                { id: 'penulis_cilik', label: 'Pena Emas', icon: '✍️', active: stories.length > baseStories.length, desc: 'Telah menulis karyamu!' },
+                { id: 'master_kuis', label: 'Cendekia Cerdas', icon: '🧠', active: scoreQuiz >= 30, desc: 'Skor Kuis di atas 30 poin!' },
+                { id: 'pecinta_hewan', label: 'Sahabat Candra', icon: '🦜', active: favorites.length >= 2, desc: 'Menyimpan 2+ cerita favorit!' }
+            ];
+
+            awards.forEach(aw => {
+                const badge = document.createElement('div');
+                if (aw.active) {
+                    badge.className = "flex items-center gap-2 p-3 bg-yellow-100 dark:bg-slate-800 border-2 border-yellow-400 rounded-2xl animate-fade-in cursor-help";
+                    badge.title = aw.desc;
+                    badge.innerHTML = `<span class="text-2xl">${aw.icon}</span> <div class="text-left"><h4 class="text-xs font-bold text-yellow-800 dark:text-yellow-400 leading-tight">${aw.label}</h4><span class="text-[9px] text-yellow-700 dark:text-slate-300 font-semibold">Tercapai!</span></div>`;
+                } else {
+                    badge.className = "flex items-center gap-2 p-3 bg-slate-100 dark:bg-slate-800/40 border-2 border-dashed border-slate-300 rounded-2xl opacity-40 cursor-not-allowed";
+                    badge.title = "Kunci: " + aw.desc;
+                    badge.innerHTML = `<span class="text-2xl filter grayscale">🔒</span> <div class="text-left"><h4 class="text-xs font-bold text-slate-500 leading-tight">${aw.label}</h4><span class="text-[9px] text-slate-400 font-semibold">Belum Tercapai</span></div>`;
+                }
+                badgeContainer.appendChild(badge);
+            });
+        };
+
+        // --- SISTEM PEMBACA BILINGUAL ---
+        window.setBilingualView = function(mode) {
+            playClick();
+            bilingualMode = mode;
+            document.getElementById('lang-id-btn').className = "px-3 py-1 rounded-full font-bold text-gray-500 transition-all";
+            document.getElementById('lang-en-btn').className = "px-3 py-1 rounded-full font-bold text-gray-500 transition-all";
+            document.getElementById('lang-dual-btn').className = "px-3 py-1 rounded-full font-bold text-gray-500 transition-all";
+
+            const activeBtn = document.getElementById(`lang-${mode}-btn`);
+            if (activeBtn) activeBtn.className = "px-3 py-1 rounded-full font-bold bg-yellow-500 text-white transition-all shadow";
+
+            renderBilingualStory();
+        };
+
+        function renderBilingualStory() {
+            if (!currentStory) return;
+            const contentBox = document.getElementById('reader-content');
+            const titleBox = document.getElementById('reader-title');
+            
+            const contentId = currentStory.content || "";
+            const contentEn = currentStory.contentEn || currentStory.content; // Fallback jika tidak ada trans
+            const titleId = currentStory.title || "";
+            const titleEn = currentStory.titleEn || currentStory.title;
+
+            // Pengaman dari error null ketika elemen id "tts-label" belum terbuat kembali
+            const ttsLabel = document.getElementById('tts-label');
+
+            if (bilingualMode === 'id') {
+                if (titleBox) titleBox.innerText = titleId;
+                contentBox.innerHTML = contentId.split('\n\n').map(p => `<p class="mb-4 text-gray-800 dark:text-slate-200 text-lg leading-relaxed">${p}</p>`).join('');
+                if (ttsLabel) ttsLabel.innerText = "Dengarkan (ID)";
+            } else if (bilingualMode === 'en') {
+                if (titleBox) titleBox.innerText = titleEn;
+                contentBox.innerHTML = contentEn.split('\n\n').map(p => `<p class="mb-4 text-gray-800 dark:text-slate-200 italic text-lg leading-relaxed">${p}</p>`).join('');
+                if (ttsLabel) ttsLabel.innerText = "Listen (EN)";
+            } else {
+                // Dual Side-by-Side
+                if (titleBox) titleBox.innerText = `${titleId} / ${titleEn}`;
+                const paragraphsId = contentId.split('\n\n');
+                const paragraphsEn = contentEn.split('\n\n');
+                
+                let html = '';
+                const maxLen = Math.max(paragraphsId.length, paragraphsEn.length);
+                for (let i = 0; i < maxLen; i++) {
+                    const pId = paragraphsId[i] || "";
+                    const pEn = paragraphsEn[i] || "";
+                    html += `
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pb-6 border-b border-yellow-100/30">
+                            <p class="text-gray-800 dark:text-slate-200 text-lg leading-relaxed">${pId}</p>
+                            <p class="text-gray-600 dark:text-slate-400 italic bg-amber-50/30 dark:bg-slate-800/40 p-4 rounded-2xl text-lg leading-relaxed">${pEn}</p>
+                        </div>
+                    `;
+                }
+                contentBox.innerHTML = html;
+                if (ttsLabel) ttsLabel.innerText = "Dengarkan";
+            }
+        }
+
+        // --- SISTEM FOTO GALERI UNTUK FORMULIR ---
+        let selectedFormImageUrl = 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800';
+        function loadPhotoLibrary() {
+            const kidsContainer = document.getElementById('subtab-kids-content');
+            const animalsContainer = document.getElementById('subtab-animals-content');
+
+            // 34 Foto Anak-Anak Cantik (Menggunakan URL Terpercaya)
+            const kidsPhotos = [
+                "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=200",
+                "https://images.unsplash.com/photo-1503919919749-64674a9a9907?w=200",
+                "https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=200",
+                "https://images.unsplash.com/photo-1471286174240-e6458e7bde0d?w=200",
+                "https://images.unsplash.com/photo-1540573133985-87b6da6d54a9?w=200",
+                "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=200",
+                "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=200",
+                "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?w=200",
+                "https://images.unsplash.com/photo-1519689680058-324335c77eb2?w=200",
+                "https://images.unsplash.com/photo-1513151233558-d860c5398176?w=200",
+                "https://images.unsplash.com/photo-1519340333755-56e879702242?w=200",
+                "https://images.unsplash.com/photo-1511551203524-9a24350a5e83?w=200",
+                "https://images.unsplash.com/photo-1476703719129-6821a1f19ab0?w=200",
+                "https://images.unsplash.com/photo-1566378246598-5b11a0d486cc?w=200",
+                "https://images.unsplash.com/photo-1537655780520-1e392edd816a?w=200",
+                "https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?w=200",
+                "https://images.unsplash.com/photo-1453749024858-4bda89b93310?w=200",
+                "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=200",
+                "https://images.unsplash.com/photo-1544816155-12df9643f363?w=200",
+                "https://images.unsplash.com/photo-1510154221590-ff63e90a136f?w=200",
+                "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=200",
+                "https://images.unsplash.com/photo-1595152772835-219674b2a8a6?w=200",
+                "https://images.unsplash.com/photo-1485546246426-74dc88dec4d9?w=200",
+                "https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?w=200",
+                "https://images.unsplash.com/photo-1504222490345-c075b6008014?w=200",
+                "https://images.unsplash.com/photo-1536640717449-4439c79e8c85?w=200",
+                "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=200",
+                "https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=200",
+                "https://images.unsplash.com/photo-1542435503-956c469947f6?w=200",
+                "https://images.unsplash.com/photo-1516575150278-77136aed6920?w=200",
+                "https://images.unsplash.com/photo-1598965402041-ac9d4531d19d?w=200",
+                "https://images.unsplash.com/photo-1508847154043-be12a62861c1?w=200",
+                "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=200",
+                "https://images.unsplash.com/photo-1500964757637-c85e8a162699?w=200"
+            ];
+
+            // 40 Foto Hewan Cantik
+            const animalPhotos = [
+                "https://images.unsplash.com/photo-1546182990-dffeafbe841d?w=200",
+                "https://images.unsplash.com/photo-1585110396054-c8112ca9625f?w=200",
+                "https://images.unsplash.com/photo-1552728089-57bdde30ebd3?w=200",
+                "https://images.unsplash.com/photo-1472491861615-bc219177f965?w=200",
+                "https://images.unsplash.com/photo-1507666405821-449371a4555e?w=200",
+                "https://images.unsplash.com/photo-1559583985-c80d8ad9b29f?w=200",
+                "https://images.unsplash.com/photo-1501705388883-4ed8a543392c?w=200",
+                "https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13?w=200",
+                "https://images.unsplash.com/photo-1535083783855-76ae62b2914e?w=200",
+                "https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=200",
+                "https://images.unsplash.com/photo-1484406566174-9da000fda645?w=200",
+                "https://images.unsplash.com/photo-1475809913362-28a064062ccd?w=200",
+                "https://images.unsplash.com/photo-1574063413132-355dbfd83e82?w=200",
+                "https://images.unsplash.com/photo-1501820488136-72669149e0d4?w=200",
+                "https://images.unsplash.com/photo-1425082661705-1834bfd09dca?w=200",
+                "https://images.unsplash.com/photo-1591824438708-ce405f36ba3d?w=200",
+                "https://images.unsplash.com/photo-1534361960057-19889db9621e?w=200",
+                "https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?w=200",
+                "https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?w=200",
+                "https://images.unsplash.com/photo-1550828521-4cb4440559b1?w=200",
+                "https://images.unsplash.com/photo-1504450758481-7338eba7524a?w=200",
+                "https://images.unsplash.com/photo-1534447677768-be436bb09401?w=200",
+                "https://images.unsplash.com/photo-1456926631375-92c8ce872def?w=200",
+                "https://images.unsplash.com/photo-1517849845537-4d257902454a?w=200",
+                "https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?w=200",
+                "https://images.unsplash.com/photo-1547721064-da6cfb341d50?w=200",
+                "https://images.unsplash.com/photo-1501706649056-def88217739c?w=200",
+                "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=200",
+                "https://images.unsplash.com/photo-1509248961158-e54f6934749c?w=200",
+                "https://images.unsplash.com/photo-1489440543286-a6933013dfc3?w=200",
+                "https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?w=800",
+                "https://images.unsplash.com/photo-1516467508483-a7212febe31a?w=200",
+                "https://images.unsplash.com/photo-1519052537078-e6302a4968d4?w=200",
+                "https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?w=200",
+                "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=200",
+                "https://images.unsplash.com/photo-1549488344-1f9b8d2bd1f3?w=200",
+                "https://images.unsplash.com/photo-1589656966895-2f33e7653819?w=200",
+                "https://images.unsplash.com/photo-1433162653888-a571db5cccc6?w=200",
+                "https://images.unsplash.com/photo-1548247416-ec66f4900b2e?w=200",
+                "https://images.unsplash.com/photo-1591561954555-607968c989ab?w=200"
+            ];
+
+            // Render ke UI
+            kidsContainer.innerHTML = kidsPhotos.map((url, idx) => `
+                <button type="button" class="group relative rounded-xl overflow-hidden border-2 border-transparent h-12 shadow animate-fade-in" onclick="window.selectGalleryImage('${url}', this)">
+                    <img src="${url}" class="w-full h-full object-cover">
+                </button>
+            `).join('');
+
+            animalsContainer.innerHTML = animalPhotos.map((url, idx) => `
+                <button type="button" class="group relative rounded-xl overflow-hidden border-2 border-transparent h-12 shadow animate-fade-in" onclick="window.selectGalleryImage('${url}', this)">
+                    <img src="${url}" class="w-full h-full object-cover">
+                </button>
+            `).join('');
+        }
+
+        function toggleModalAdd() {
+            playClick();
+            const modal = document.getElementById('modal-add');
+            modal.classList.toggle('hidden');
+        }
+
+        const saveToLocal = (story) => {
+            const localCustom = JSON.parse(localStorage.getItem('custom_stories')) || [];
+            if (!localCustom.some(s => String(s.id) === String(story.id))) {
+                localCustom.push(story);
+                localStorage.setItem('custom_stories', JSON.stringify(localCustom));
+            }
+            mergeAndRenderStories();
+        };
+
+        window.selectGalleryImage = function(url, buttonEl) {
+            playClick();
+            selectedFormImageUrl = url;
+            document.getElementById('form-image-preview').src = url;
+            document.getElementById('input-custom-img-url').value = '';
+
+            const parent = buttonEl.closest('.grid');
+            if (parent) {
+                parent.querySelectorAll('button').forEach(btn => btn.classList.remove('border-yellow-400'));
+            }
+            buttonEl.classList.add('border-yellow-400');
+        };
+
+        window.updateCustomImagePreview = function(url) {
+            const cleanUrl = url.trim();
+            const previewImg = document.getElementById('form-image-preview');
+            if (cleanUrl) {
+                selectedFormImageUrl = cleanUrl;
+                previewImg.src = cleanUrl;
+            }
+        };
+
+        window.switchSubTab = function(subtab) {
+            playClick();
+            const kidsBtn = document.getElementById('subtab-kids-btn');
+            const animalsBtn = document.getElementById('subtab-animals-btn');
+            const kidsContent = document.getElementById('subtab-kids-content');
+            const animalsContent = document.getElementById('subtab-animals-content');
+
+            if (subtab === 'kids') {
+                kidsBtn.className = "px-3 py-1.5 font-bold text-xs rounded-t-xl bg-yellow-400 text-white transition-all";
+                animalsBtn.className = "px-3 py-1.5 font-bold text-xs rounded-t-xl bg-slate-200 text-gray-600 hover:bg-yellow-100 transition-all";
+                kidsContent.classList.remove('hidden');
+                animalsContent.classList.add('hidden');
+            } else {
+                animalsBtn.className = "px-3 py-1.5 font-bold text-xs rounded-t-xl bg-yellow-400 text-white transition-all";
+                kidsBtn.className = "px-3 py-1.5 font-bold text-xs rounded-t-xl bg-slate-200 text-gray-600 hover:bg-yellow-100 transition-all";
+                animalsContent.classList.remove('hidden');
+                kidsContent.classList.add('hidden');
+            }
+        };
+
+        async function addNewStory() {
+            const author = document.getElementById('input-author').value.trim() || "SMP Bilingual";
+            const title = document.getElementById('input-title').value;
+            const titleEn = document.getElementById('input-title-en').value;
+            const desc = document.getElementById('input-desc').value;
+            const content = document.getElementById('input-content').value;
+            const contentEn = document.getElementById('input-content-en').value;
+
+            const newStory = {
+                id: String(Date.now()),
+                author: author,
+                title: title,
+                titleEn: titleEn,
+                image: selectedFormImageUrl,
+                desc: desc,
+                content: content,
+                contentEn: contentEn,
+                createdAt: new Date().toISOString()
+            };
+
+            saveToLocal(newStory);
+
+            if (useFirebase && currentUser) {
+                try {
+                    const storiesCollection = collection(db, 'artifacts', appId, 'public', 'data', 'stories');
+                    await addDoc(storiesCollection, newStory);
+                } catch (error) {
+                    console.error("Gagal sinkronisasi cloud:", error);
+                }
+            }
+
+            document.getElementById('form-add-story').reset();
+            selectedFormImageUrl = 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800';
+            document.getElementById('form-image-preview').src = selectedFormImageUrl;
+
+            toggleModalAdd();
+            showView('list');
+            openSuccessModal("Cerita bilingual hebatmu berhasil diterbitkan!");
+        }
+
+        const openSuccessModal = (msg) => {
+            document.getElementById('success-message').innerText = msg;
+            document.getElementById('modal-success').classList.remove('hidden');
+        };
+        
+        window.closeSuccessModal = () => {
+            document.getElementById('modal-success').classList.add('hidden');
+        };
+
+        function playClick() {
+            // Putar audio fallback jika MP3 mixkit gagal dimuat
+            const click = document.getElementById('clickSound');
+            click.currentTime = 0;
+            click.play().catch(() => {
+                playFallbackSound('click');
+            });
+        }
+
+        // --- SISTEM PERBAIKAN TIMING & STRUKTUR TOMBOL DENGERKAN ---
+        function showView(viewName) {
+            playClick();
+            document.querySelectorAll('.view').forEach(v => v.classList.add('hidden'));
+            document.getElementById(`view-${viewName}`).classList.remove('hidden');
+            window.scrollTo(0, 0);
+            stopSpeech();
+        }
+
+        function renderStoryGrid(data) {
+            const grid = document.getElementById('story-grid');
+            if (!grid) return;
+            grid.innerHTML = data.map(story => {
+                const stringId = String(story.id);
+                const isStoryFav = favorites.some(favId => String(favId) === stringId);
+                const isStoryRead = readHistory.some(readId => String(readId) === stringId);
+                const authorName = story.author || "SMP Bilingual";
+
+                return `
+                    <div class="card-story bg-white dark:bg-slate-800 rounded-3xl shadow-lg overflow-hidden transition-all duration-300 cursor-pointer flex flex-col h-full relative border border-slate-100 dark:border-slate-700" onclick="window.openStory('${story.id}')">
+                        ${isStoryRead ? '<span class="absolute top-3 left-3 bg-green-500 text-white text-[10px] px-2.5 py-1 rounded-full font-bold shadow-md">✓ Dibaca</span>' : ''}
+                        <img src="${story.image}" alt="${story.title}" class="w-full h-40 object-cover" onerror="window.handleImageError(this)">
+                        <div class="p-5 flex flex-col flex-grow">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-[10px] font-bold text-gray-400 uppercase"><i class="fas fa-user-edit mr-1"></i>${authorName}</span>
+                                <span class="text-[10px] bg-yellow-50 text-yellow-600 px-2.5 py-1 rounded-full font-bold uppercase dark:bg-slate-700 dark:text-yellow-300">Bilingual</span>
+                            </div>
+                            <h3 class="text-lg text-yellow-600 mb-1 leading-snug font-kids">${story.title}</h3>
+                            <h4 class="text-xs text-gray-400 italic mb-2">${story.titleEn || ""}</h4>
+                            <p class="text-gray-500 dark:text-slate-300 text-xs mb-4 flex-grow line-clamp-3">${story.desc}</p>
+                            <div class="flex justify-between items-center mt-auto border-t pt-3 border-yellow-50 dark:border-slate-700">
+                                <span class="text-[10px] text-gray-400 font-bold">Mulai Baca</span>
+                                <i class="${isStoryFav ? 'fas fa-star text-yellow-500 animate-pulse' : 'far fa-star text-gray-400'} text-base"></i>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function openStory(id) {
+            currentStory = stories.find(s => String(s.id) === String(id));
+            if (!currentStory) return;
+
+            localStorage.setItem('last_read', JSON.stringify({id: currentStory.id, title: currentStory.title}));
+            
+            // Masukkan ke riwayat membaca jika belum ada
+            const stringId = String(currentStory.id);
+            if (!readHistory.some(readId => String(readId) === stringId)) {
+                readHistory.push(currentStory.id);
+                localStorage.setItem('read_history', JSON.stringify(readHistory));
+                updateStats();
+            }
+
+            document.getElementById('reader-image').src = currentStory.image;
+            document.getElementById('reader-author').innerText = currentStory.author || "SMP Bilingual";
+            
+            // Atur Mode Bahasa Awal ke Bahasa Indonesia
+            setBilingualView('id');
+
+            const nextBtn = document.getElementById('btn-next');
+            const currentIndex = stories.findIndex(s => String(s.id) === String(id));
+            const nextIndex = currentIndex + 1;
+            
+            if (nextIndex < stories.length) {
+                nextBtn.classList.remove('hidden');
+                nextBtn.onclick = () => openStory(stories[nextIndex].id);
+            } else {
+                nextBtn.classList.add('hidden');
+            }
+
+            updateFavUI();
+            showView('read');
+            checkLastRead();
+        }
+
+        function toggleFavorite() {
+            if (!currentStory) return;
+            const stringId = String(currentStory.id);
+            const index = favorites.findIndex(favId => String(favId) === stringId);
+            
+            if (index > -1) {
+                favorites.splice(index, 1);
+            } else {
+                favorites.push(currentStory.id);
+            }
+            localStorage.setItem('story_favs', JSON.stringify(favorites));
+            updateFavUI();
+            updateStats();
+            renderStoryGrid(stories);
+        }
+
+        function updateFavUI() {
+            const btn = document.getElementById('btn-fav');
+            const icon = btn.querySelector('i');
+            const stringId = String(currentStory?.id);
+            const isStoryFav = favorites.some(favId => String(favId) === stringId);
+
+            if (isStoryFav) {
+                icon.className = "fas fa-star text-yellow-500 animate-bounce";
+            } else {
+                icon.className = "far fa-star text-yellow-500";
+            }
+        }
+
+        function showFavorites() {
+            const favStories = stories.filter(s => {
+                const stringId = String(s.id);
+                return favorites.some(favId => String(favId) === stringId);
+            });
+            renderStoryGrid(favStories);
+            showView('list');
+            document.querySelector('#view-list h2').innerText = "Cerita Favoritmu ⭐";
+        }
+
+        function checkLastRead() {
+            const last = JSON.parse(localStorage.getItem('last_read'));
+            const box = document.getElementById('last-read-box');
+            if (last) {
+                const exists = stories.find(s => String(s.id) === String(last.id));
+                if (exists) {
+                    box.classList.remove('hidden');
+                    document.getElementById('last-read-title').innerText = last.title;
+                    document.getElementById('btn-continue').onclick = () => openStory(last.id);
+                }
+            }
+        }
+
+        function toggleDarkMode() {
+            isDarkMode = !isDarkMode;
+            document.body.classList.toggle('dark-mode');
+            const icon = document.getElementById('themeIcon');
+            icon.className = isDarkMode ? 'fas fa-sun text-yellow-400' : 'fas fa-moon text-indigo-600';
+        }
+
+        function changeFontSize(val) {
+            document.getElementById('reader-content').style.fontSize = val + 'px';
+        }
+
+        // --- Text To Speech (Bilingual Support) ---
+        function toggleSpeech() {
+            if (isSpeaking) {
+                stopSpeech();
+            } else {
+                startSpeech();
+            }
+        }
+
+        function startSpeech() {
+            if (!currentStory) return;
+            stopSpeech();
+            
+            const selectedSpeed = parseFloat(document.getElementById('tts-speed').value) || 1.0;
+            
+            // Sesuaikan pembacaan suara berdasarkan mode bahasa aktif
+            let contentText = "";
+            let speechLang = "id-ID";
+
+            if (bilingualMode === 'en') {
+                contentText = currentStory.contentEn || currentStory.content;
+                speechLang = "en-US";
+            } else {
+                contentText = currentStory.content;
+                speechLang = "id-ID";
+            }
+
+            utterThis = new SpeechSynthesisUtterance(contentText);
+            utterThis.lang = speechLang;
+            utterThis.rate = selectedSpeed;
+            utterThis.pitch = 1.1;
+
+            utterThis.onstart = () => {
+                isSpeaking = true;
+                const btnTTS = document.getElementById('btn-tts');
+                if (btnTTS) {
+                    btnTTS.innerHTML = `
+                        <div class="wave-container">
+                            <span class="wave-bar"></span>
+                            <span class="wave-bar"></span>
+                            <span class="wave-bar"></span>
+                            <span class="wave-bar"></span>
+                        </div>
+                        <span id="tts-label">Berhenti</span>
+                    `;
+                    btnTTS.classList.replace('bg-yellow-500', 'bg-orange-500');
+                }
+            };
+
+            utterThis.onend = () => {
+                stopSpeech();
+            };
+
+            synth.speak(utterThis);
+        }
+
+        function stopSpeech() {
+            synth.cancel();
+            isSpeaking = false;
+            const btn = document.getElementById('btn-tts');
+            if (btn) {
+                btn.innerHTML = '<i class="fas fa-volume-up"></i> <span id="tts-label">Dengarkan</span>';
+                btn.classList.replace('bg-orange-500', 'bg-yellow-500');
+            }
+        }
+
+        // --- 🤖 INTEGRASI ASISTEN GEMINI AI 🤖 ---
+        async function callGeminiAPI(userQuery, systemPrompt = "") {
+            const apiKey = ""; 
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+            
+            const payload = {
+                contents: [{ parts: [{ text: userQuery }] }]
+            };
+            if (systemPrompt) {
+                payload.systemInstruction = { parts: [{ text: systemPrompt }] };
+            }
+
+            let retryDelay = 1000;
+            for (let i = 0; i < 5; i++) {
+                try {
+                    const response = await fetch(url, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    
+                    if (response.ok) {
+                        const jsonResponse = await response.json();
+                        return jsonResponse.candidates?.[0]?.content?.parts?.[0]?.text || "Maaf, asisten tidak memberikan respon.";
+                    }
+                } catch (err) {
+                    // Berlanjut ke percobaan berikutnya
+                }
+                await new Promise(resolve => setTimeout(resolve, retryDelay));
+                retryDelay *= 2;
+            }
+            throw new Error("Koneksi ke asisten pintar gagal. Silakan periksa jaringan internet Anda.");
+        }
+
+        // Mengarang Cerita Bilingual (Indonesia - English)
+        window.generateStoryWithAI = async function() {
+            playClick();
+            const char = document.getElementById('ai-char').value;
+            const moralValue = document.getElementById('ai-value').value;
+            
+            const btn = document.getElementById('btn-ai-generate');
+            const loader = document.getElementById('ai-loader');
+            
+            btn.disabled = true;
+            btn.classList.add('opacity-50');
+            loader.classList.remove('hidden');
+
+            const systemPrompt = `Anda adalah asisten dongeng fabel interaktif ramah anak untuk sekolah dasar.
+Tugas Anda adalah membuatkan cerita petualangan anak-anak atau fabel secara BILINGUAL (Dua Bahasa: Indonesia dan English Translation).
+Kembalikan respon dalam format JSON yang valid dengan kunci:
+- "title": Judul cerita yang menarik dan kreatif dalam bahasa Indonesia.
+- "titleEn": Judul cerita terjemahan bahasa Inggris.
+- "desc": Deskripsi singkat (1 kalimat ringkas) tentang cerita.
+- "content": Isi cerita lengkap bahasa Indonesia (minimal 3 paragraf dengan pemisah baris baru ganda \\n\\n).
+- "contentEn": Isi cerita lengkap bahasa Inggris (minimal 3 paragraf dengan pemisah baris baru ganda \\n\\n).`;
+
+            const prompt = `Buatkan cerita anak yang dibintangi oleh tokoh "${char}" dengan mengajarkan pesan moral tentang "${moralValue}".`;
+
+            try {
+                const rawResult = await callGeminiAPI(prompt, systemPrompt);
+                let cleanJson = rawResult.replace(/^```json\s*/i, '').replace(/```\s*$/, '').trim();
+                const storyData = JSON.parse(cleanJson);
+                
+                document.getElementById('input-title').value = storyData.title || "Kisah Kebaikan";
+                document.getElementById('input-title-en').value = storyData.titleEn || "The Story of Kindness";
+                document.getElementById('input-desc').value = storyData.desc || "Sebuah cerita indah penuh pesan moral.";
+                document.getElementById('input-content').value = storyData.content || "";
+                document.getElementById('input-content-en').value = storyData.contentEn || "";
+                
+                window.switchWriteTab('manual');
+            } catch (error) {
+                console.error(error);
+                document.getElementById('input-content').value = `Error: ${error.message}\n\nJangan khawatir, kamu masih bisa menulis ceritamu sendiri secara manual!`;
+                window.switchWriteTab('manual');
+            } finally {
+                btn.disabled = false;
+                btn.classList.remove('opacity-50');
+                loader.classList.add('hidden');
+            }
+        };
+
+        window.switchWriteTab = function(tab) {
+            playClick();
+            const manualBtn = document.getElementById('tab-manual-btn');
+            const aiBtn = document.getElementById('tab-ai-btn');
+            const manualContent = document.getElementById('tab-manual-content');
+            const aiContent = document.getElementById('tab-ai-content');
+
+            if (tab === 'manual') {
+                manualBtn.className = "flex-1 py-2.5 rounded-xl font-bold text-sm text-yellow-600 bg-white shadow transition-all flex items-center justify-center gap-2";
+                aiBtn.className = "flex-1 py-2.5 rounded-xl font-bold text-sm text-gray-500 hover:text-yellow-600 transition-all flex items-center justify-center gap-2";
+                
+                manualContent.classList.remove('hidden');
+                aiContent.classList.add('hidden');
+            } else {
+                aiBtn.className = "flex-1 py-2.5 rounded-xl font-bold text-sm text-yellow-600 bg-white shadow transition-all flex items-center justify-center gap-2";
+                manualBtn.className = "flex-1 py-2.5 rounded-xl font-bold text-sm text-gray-500 hover:text-yellow-600 transition-all flex items-center justify-center gap-2";
+                
+                manualContent.classList.add('hidden');
+                aiContent.classList.remove('hidden');
+            }
+        };
+
+        // Chatbot Interaktif "Tanya Sahabat Terang"
+        let chatHistory = [];
+        window.toggleChatModal = function() {
+            playClick();
+            const modal = document.getElementById('modal-chat');
+            const isOpening = modal.classList.contains('hidden');
+            modal.classList.toggle('hidden');
+
+            if (isOpening && currentStory) {
+                const messagesContainer = document.getElementById('chat-messages');
+                messagesContainer.innerHTML = '';
+                chatHistory = [];
+
+                const welcomeMsg = `Halo sobat cilik Papua! Aku adalah 🦜 *Candra si Burung Cendrawasih Emas*. Kamu sedang membaca kisah indah tentang **"${currentStory.title}"** ya?
+
+Aku siap membantumu mengerti kosa kata sulit (bahasa Indonesia/Inggris/daerah Papua), mengajari makna moral yang hangat, atau menceritakan fakta sains alam Papua yang mengagumkan. Silakan bertanya, kawan terkasih!`;
+                appendChatMessage("ai", welcomeMsg);
+            }
+        };
+
+        const appendChatMessage = (sender, text) => {
+            const container = document.getElementById('chat-messages');
+            const msgDiv = document.createElement('div');
+            
+            if (sender === "user") {
+                msgDiv.className = "flex justify-end animate-fade-in";
+                msgDiv.innerHTML = `
+                    <div class="bg-yellow-500 text-white p-3.5 rounded-2xl rounded-tr-none max-w-[80%] shadow-sm font-semibold">
+                        ${escapeHTML(text)}
+                    </div>
+                `;
+            } else {
+                msgDiv.className = "flex justify-start items-start gap-2.5 animate-fade-in";
+                const formattedText = text.replace(/\*\*(.*?)\*\*/g, 'font-bold text-yellow-800 dark:text-yellow-300">$1</span>')
+                                          .replace(/\*(.*?)\*/g, 'italic text-indigo-700 dark:text-indigo-300">$1</span>')
+                                          .replace(/font-bold/g, '<span class="font-bold')
+                                          .replace(/italic/g, '<span class="italic');
+                                              
+                msgDiv.innerHTML = `
+                    <span class="text-2xl pt-1">🦜</span>
+                    <div class="bg-white dark:bg-slate-800 border border-yellow-100 dark:border-slate-700 p-3.5 rounded-2xl rounded-tl-none max-w-[80%] shadow-sm leading-relaxed text-gray-700 dark:text-slate-100">
+                        ${formattedText}
+                    </div>
+                `;
+            }
+            container.appendChild(msgDiv);
+            container.scrollTo({ top: container.scrollHeight, behavior: 'smooth' });
+        };
+
+        const escapeHTML = (text) => {
+            return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+        };
+
+        window.sendMessageToAI = async function() {
+            const input = document.getElementById('chat-input');
+            const messageText = input.value.trim();
+            if (!messageText) return;
+
+            playClick();
+            appendChatMessage("user", messageText);
+            input.value = '';
+
+            const loader = document.getElementById('chat-loading');
+            loader.classList.remove('hidden');
+
+            const systemPrompt = `Anda adalah 🦜 Candra si Burung Cendrawasih yang bijaksana, asisten belajar multi-bahasa yang ramah anak, gembira, dan penyayang dari SMP Bilingual Cahaya Anak Papua.
+Tugas Anda adalah menjawab pertanyaan siswa mengenai cerita bilingual "${currentStory?.title || "fabel umum"}" dengan isi konten bahasa Indonesia: "${currentStory?.content || ""}" dan bahasa Inggris: "${currentStory?.contentEn || ""}".
+Berikan penjelasan moral yang hangat, fakta sains yang menarik, nilai-nilai cinta sesama makhluk hidup, serta gunakan sapaan ramah khas anak Papua seperti "sobat cilik", "kawan terkasih", dan sisipkan emoji yang lucu. Jawab secara ringkas, padat, dan menyenangkan.`;
+
+            chatHistory.push({ role: "user", text: messageText });
+            const conversationPrompt = chatHistory.map(h => `${h.role === 'user' ? 'Pertanyaan Anak' : 'Jawaban Candra'}: ${h.text}`).join("\n") + "\nJawaban Candra:";
+
+            try {
+                const aiResponse = await callGeminiAPI(conversationPrompt, systemPrompt);
+                chatHistory.push({ role: "ai", text: aiResponse });
+                appendChatMessage("ai", aiResponse);
+            } catch (error) {
+                appendChatMessage("ai", `Wah, maaf sekali sobat cilik. Candra kehilangan sinyal di atas bukit hijau Papua. 🍃\n\nBisa tolong ulangi pertanyaanmu? (Error: ${error.message})`);
+            } finally {
+                loader.classList.add('hidden');
+            }
+        };
+
+        // Ekspor global untuk onclick HTML
+        window.showView = showView;
+        window.toggleModalAdd = toggleModalAdd;
+        window.toggleDarkMode = toggleDarkMode;
+        window.changeFontSize = changeFontSize;
+        window.toggleSpeech = toggleSpeech;
+        window.toggleFavorite = toggleFavorite;
+        window.showFavorites = showFavorites;
+        window.openStory = openStory;
+        window.closeSuccessModal = closeSuccessModal;
+    </script>
+</body>
+</html>
